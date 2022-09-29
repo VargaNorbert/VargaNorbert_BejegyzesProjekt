@@ -37,16 +37,36 @@ public class Main {
 
         tartalomModositasa();
 
-        for (int i = 0; i < bejegyzesek.size(); i++) {
-
-            System.out.println(bejegyzesek.get(i));
-        }
+        kiir(bejegyzesek);
 
         legnepszerubb();
 
         harminotLikeFolott();
 
+        tizenotAlatt();
 
+
+
+
+    }
+
+    private static void kiir(List lista){
+        for (int i = 0; i < lista.size(); i++) {
+
+            System.out.println(lista.get(i));
+        }
+    }
+
+    private static void tizenotAlatt(){
+        int a =0;
+
+        for (int i = 0; i < bejegyzesek.size(); i++) {
+            if (bejegyzesek.get(i).getLikeok()<15){
+                a++;
+            }
+        }
+
+        System.out.printf("%d. db elem van ami 15-nél kevesebb like-al rendelkezik.",a);
     }
 
     private static void harminotLikeFolott() {
