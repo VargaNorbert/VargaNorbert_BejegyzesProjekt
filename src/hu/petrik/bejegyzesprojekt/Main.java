@@ -37,41 +37,59 @@ public class Main {
 
         tartalomModositasa();
 
-        for (int i = 0; i < bejegyzesek.size() ; i++) {
+        for (int i = 0; i < bejegyzesek.size(); i++) {
 
             System.out.println(bejegyzesek.get(i));
         }
 
         legnepszerubb();
 
+        harminotLikeFolott();
+
 
     }
 
-    private static void legnepszerubb(){
-        int max=0;
+    private static void harminotLikeFolott() {
+        boolean van = false;
 
         for (int i = 0; i < bejegyzesek.size(); i++) {
-            if (bejegyzesek.get(i).getLikeok()>max){
-                max=bejegyzesek.get(i).getLikeok();
+            if (bejegyzesek.get(i).getLikeok() > 35) {
+                van = true;
+            }
+        }
+
+        if (van == true) {
+            System.out.println("Van olyan bejegyzés ami 35-nél több likeot kapott.");
+        } else {
+            System.out.println("Nincs olyan bejegyzés ami 35-nél több likeot kapott.");
+        }
+    }
+
+    private static void legnepszerubb() {
+        int max = 0;
+
+        for (int i = 0; i < bejegyzesek.size(); i++) {
+            if (bejegyzesek.get(i).getLikeok() > max) {
+                max = bejegyzesek.get(i).getLikeok();
             }
         }
 
         System.out.println(max);
     }
 
-    private static void tartalomModositasa(){
-        Scanner sc= new Scanner(System.in);
+    private static void tartalomModositasa() {
+        Scanner sc = new Scanner(System.in);
         String tartalom;
 
         System.out.println("Mi legyen a masodik elem tartalma?");
-        tartalom=sc.nextLine();
+        tartalom = sc.nextLine();
 
         bejegyzesek.get(1).setTartalom(tartalom);
     }
 
-    private static void likeokKiosztása(){
+    private static void likeokKiosztása() {
 
-        int a = bejegyzesek.size()*20;
+        int a = bejegyzesek.size() * 20;
 
         Random r = new Random();
 
