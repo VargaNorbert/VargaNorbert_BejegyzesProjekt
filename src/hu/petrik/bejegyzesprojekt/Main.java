@@ -35,7 +35,12 @@ public class Main {
 
         likeokKiosztása();
 
+        tartalomModositasa();
 
+        for (int i = 0; i < bejegyzesek.size() ; i++) {
+
+            System.out.println(bejegyzesek.get(i));
+        }
 
 
     }
