@@ -42,7 +42,21 @@ public class Main {
             System.out.println(bejegyzesek.get(i));
         }
 
+        legnepszerubb();
 
+
+    }
+
+    private static void legnepszerubb(){
+        int max=0;
+
+        for (int i = 0; i < bejegyzesek.size(); i++) {
+            if (bejegyzesek.get(i).getLikeok()>max){
+                max=bejegyzesek.get(i).getLikeok();
+            }
+        }
+
+        System.out.println(max);
     }
 
     private static void tartalomModositasa(){
@@ -62,7 +76,7 @@ public class Main {
         Random r = new Random();
 
         for (int i = 0; i < a; i++) {
-            bejegyzesek.get(r.nextInt(bejegyzesek.size() - 1)).like();
+            bejegyzesek.get(r.nextInt(bejegyzesek.size())).like();
         }
 
     }
