@@ -51,7 +51,7 @@ public class Bejegyzes {
     @Override
     public String toString() {
 
-        if(this.szerkesztve==this.letrejott){
+        if(this.szerkesztve.equals(this.letrejott)){
 
             return String.format(
                     "%s - %d - %s\n"+

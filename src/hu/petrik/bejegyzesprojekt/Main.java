@@ -46,8 +46,25 @@ public class Main {
         tizenotAlatt();
 
 
+        rendezes();
+        kiir(bejegyzesek);
 
 
+
+
+    }
+
+    private static void rendezes(){
+        int n = bejegyzesek.size();
+
+
+        for (int i = n - 1; i > 0; i--)
+            for (int j = 0; j < i; j++)
+                if (bejegyzesek.get(j).getLikeok() < bejegyzesek.get(j + 1).getLikeok()) {
+                    Bejegyzes a = bejegyzesek.get(j);
+                    bejegyzesek.set(j, bejegyzesek.get(j + 1));
+                    bejegyzesek.set((j + 1), a);
+                }
     }
 
     private static void kiir(List lista){
@@ -66,7 +83,7 @@ public class Main {
             }
         }
 
-        System.out.printf("%d. db elem van ami 15-nél kevesebb like-al rendelkezik.",a);
+        System.out.printf("%d. db elem van ami 15-nél kevesebb like-al rendelkezik.\n",a);
     }
 
     private static void harminotLikeFolott() {
@@ -134,7 +151,6 @@ public class Main {
         fr.close();
         br.close();
     }
-
 
     private static void bejegyzesFelveteleKonzolrol() {
         Scanner sc = new Scanner(System.in);
