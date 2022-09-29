@@ -36,6 +36,18 @@ public class Main {
         likeokKiosztása();
 
 
+
+
+    }
+
+    private static void tartalomModositasa(){
+        Scanner sc= new Scanner(System.in);
+        String tartalom;
+
+        System.out.println("Mi legyen a masodik elem tartalma?");
+        tartalom=sc.nextLine();
+
+        bejegyzesek.get(1).setTartalom(tartalom);
     }
 
     private static void likeokKiosztása(){
