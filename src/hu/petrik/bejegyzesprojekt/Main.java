@@ -50,40 +50,42 @@ public class Main {
         kiir(bejegyzesek);
 
 
-
-
     }
 
-    private static void rendezes(){
+    private static void rendezes() {
         int n = bejegyzesek.size();
 
 
         for (int i = n - 1; i > 0; i--)
             for (int j = 0; j < i; j++)
                 if (bejegyzesek.get(j).getLikeok() < bejegyzesek.get(j + 1).getLikeok()) {
+
                     Bejegyzes a = bejegyzesek.get(j);
+
                     bejegyzesek.set(j, bejegyzesek.get(j + 1));
+
                     bejegyzesek.set((j + 1), a);
                 }
     }
 
-    private static void kiir(List lista){
+    private static void kiir(List lista) {
         for (int i = 0; i < lista.size(); i++) {
 
             System.out.println(lista.get(i));
         }
     }
 
-    private static void tizenotAlatt(){
-        int a =0;
+    private static void tizenotAlatt() {
+        int a = 0;
 
         for (int i = 0; i < bejegyzesek.size(); i++) {
-            if (bejegyzesek.get(i).getLikeok()<15){
+
+            if (bejegyzesek.get(i).getLikeok() < 15) {
                 a++;
             }
         }
 
-        System.out.printf("%d. db elem van ami 15-nél kevesebb like-al rendelkezik.\n",a);
+        System.out.printf("%d. db elem van ami 15-nél kevesebb like-al rendelkezik.\n", a);
     }
 
     private static void harminotLikeFolott() {
